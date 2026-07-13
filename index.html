@@ -19,7 +19,7 @@
   :root{
     --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
     --ink:#14161b; --line:#e6e8ec; --muted:#5b6472; --paper:#ffffff; --soft:#f5f6f8;
-    --accent:#ff7a1a; --accent-ink:#ffffff; --accent-2:#c2691a;
+    --accent:#ff7a1a; --accent-ink:#ffffff; --accent-2:#c2691a; --accent-text:#c62828;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -48,9 +48,9 @@
   .nav-links{display:flex;gap:24px;align-items:center}
   .nav-links a{color:#c7ccd6;font-size:15px;font-weight:500}
   .nav-links a:hover{color:#fff}
-  .nav-phone{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#fff!important;font-weight:700;padding:9px 15px;border-radius:9px;transition:.15s}
+  .nav-phone{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:var(--accent-ink)!important;font-weight:700;padding:9px 15px;border-radius:9px;transition:.15s}
   .nav-phone svg{width:16px;height:16px}
-  .nav-phone:hover{background:var(--accent-2);color:#fff!important}
+  .nav-phone:hover{background:var(--accent-2);color:var(--accent-ink)!important}
   .nav-toggle-cb{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
   .nav-toggle{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px;line-height:0}
   .nav-toggle svg{width:27px;height:27px}
@@ -60,7 +60,7 @@
     .nav-toggle-cb:checked ~ .nav-links{display:flex}
     .nav-links a{padding:14px 24px;font-size:16px;border-top:1px solid rgba(255,255,255,.05)}
     .nav-links a:first-child{border-top:0}
-    .nav-phone{margin:10px 24px 12px;padding:14px;border-radius:10px;color:#fff!important;background:var(--accent);border-top:0}
+    .nav-phone{margin:10px 24px 12px;padding:14px;border-radius:10px;color:var(--accent-ink)!important;background:var(--accent);border-top:0}
   }
 
   /* Hero */
@@ -70,7 +70,7 @@
   .hero-glow{position:absolute;right:-120px;top:-80px;width:420px;height:420px;background:radial-gradient(circle,#ff7a1a4d,transparent 70%);z-index:1}
   .hero .wrap{padding:96px 24px 40px;position:relative;z-index:2}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#e2d3c8;margin-bottom:18px}
-  .eyebrow .mesto{color:#fff;background:var(--accent);padding:2px 9px;border-radius:5px;letter-spacing:.10em}
+  .eyebrow .mesto{color:var(--accent-ink);background:var(--accent);padding:2px 9px;border-radius:5px;letter-spacing:.10em}
   .hero h1{font-size:clamp(38px,6vw,64px);max-width:17ch}
   .hero h1 .mesto{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px;text-decoration-thickness:5px}
   .hero p.lead{font-size:clamp(17px,2.2vw,21px);color:#dfe3ea;max-width:54ch;margin:22px 0 32px}
@@ -85,7 +85,7 @@
   section{padding:84px 0}
   section[id]{scroll-margin-top:82px}
   .sec-head{max-width:62ch;margin-bottom:40px}
-  .sec-head .eyebrow{color:var(--accent);background:none;padding:0}
+  .sec-head .eyebrow{color:var(--accent-text);background:none;padding:0}
   .sec-head h2{font-size:clamp(28px,4vw,42px);color:var(--ink)}
   .sec-head p{color:var(--muted);font-size:18px;margin-top:14px}
 
@@ -98,11 +98,11 @@
   .card h3{font-size:19px;margin-bottom:7px}
   .card p{color:var(--muted);font-size:15px}
 
-  .cta-band{background:var(--accent);color:#fff;padding:44px 0}
+  .cta-band{background:var(--accent);color:var(--accent-ink);padding:44px 0}
   .cta-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .cta-band h2{font-size:clamp(24px,3.4vw,32px);color:#fff}
-  .cta-band p{color:rgba(255,255,255,.9);font-size:17px;margin-top:6px}
-  .cta-band .btn{background:#fff;color:var(--accent);flex:0 0 auto}
+  .cta-band h2{font-size:clamp(24px,3.4vw,32px);color:var(--accent-ink)}
+  .cta-band p{color:var(--accent-ink);font-size:17px;margin-top:6px}
+  .cta-band .btn{background:#fff;color:var(--accent-text);flex:0 0 auto}
   .cta-band .btn:hover{background:#14161b;color:#fff;transform:translateY(-2px)}
 
   .why .card .ico{color:var(--accent)}
@@ -129,9 +129,10 @@
   .car-arrow svg{width:20px;height:20px}
   .car-arrow.prev{left:4px} .car-arrow.next{right:4px}
   @media(max-width:860px){ .car-stage{padding:0 40px} .car-arrow{width:38px;height:38px} .car-arrow.prev{left:-2px} .car-arrow.next{right:-2px} }
-  .car-dots{display:flex;gap:8px;justify-content:center;margin-top:26px}
-  .car-dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:.2s}
-  .car-dots button.active{background:var(--accent);width:24px;border-radius:5px}
+  .car-dots{display:flex;gap:4px;justify-content:center;margin-top:24px}
+  .car-dots button{width:24px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+  .car-dots button::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--line);transition:.2s}
+  .car-dots button.active::before{background:var(--accent);width:22px;border-radius:5px}
   .ref-placeholder{max-width:640px}
 
   .about .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
@@ -198,8 +199,8 @@
       <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
       <div class="txt"><b>Autoservis Novák</b><span>Autoservis</span></div>
     </div>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" aria-hidden="true">
-    <label class="nav-toggle" for="nav-toggle" aria-label="Otevřít menu">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" aria-label="Otevřít menu">
+    <label class="nav-toggle" for="nav-toggle">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </label>
     <div class="nav-links">
@@ -212,6 +213,7 @@
   </div>
 </nav>
 
+<main>
 <header class="hero">
   <img class="hero-bg" src="https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp" srcset="https://danielnytra.github.io/autoservis-novak-demo/hero-sm.webp 640w, https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp 1280w" sizes="100vw" alt="" width="1280" height="853" fetchpriority="high" decoding="async">
   <div class="hero-overlay"></div><div class="hero-glow"></div>
@@ -350,21 +352,21 @@
       
       <form class="form" onsubmit="return false" action="#poptavka">
         <div class="frow two">
-          <div><label>Jméno a příjmení <span class="req">*</span></label><input type="text" name="jmeno" placeholder="Jan Novák" required></div>
-          <div><label>Telefon <span class="req">*</span></label><input type="tel" name="telefon" placeholder="+420 …" required></div>
+          <div><label for="f-jmeno">Jméno a příjmení <span class="req">*</span></label><input id="f-jmeno" type="text" name="jmeno" placeholder="Jan Novák" required></div>
+          <div><label for="f-telefon">Telefon <span class="req">*</span></label><input id="f-telefon" type="tel" name="telefon" placeholder="+420 …" required></div>
         </div>
         <div class="frow two">
-          <div><label>E-mail</label><input type="email" name="email" placeholder="vas@email.cz"></div>
-          <div><label>Značka a model vozu</label><input type="text" name="vuz" placeholder="Škoda Octavia 2018"></div>
+          <div><label for="f-email">E-mail</label><input id="f-email" type="email" name="email" placeholder="vas@email.cz"></div>
+          <div><label for="f-vuz">Značka a model vozu</label><input id="f-vuz" type="text" name="vuz" placeholder="Škoda Octavia 2018"></div>
         </div>
-        <div><label>Čeho se poptávka týká <span class="req">*</span></label>
-          <select name="typ" required>
+        <div><label for="f-typ">Čeho se poptávka týká <span class="req">*</span></label>
+          <select id="f-typ" name="typ" required>
             <option value="">Vyberte službu…</option>
             <option>Servis a opravy</option><option>Pneuservis</option><option>Diagnostika</option><option>Příprava na STK</option><option>Servis klimatizace</option><option>Výměna oleje a filtrů</option>
             <option>Jiné</option>
           </select>
         </div>
-        <div><label>Popis <span class="req">*</span></label><textarea name="popis" placeholder="Krátce popište, co potřebujete…" required></textarea></div>
+        <div><label for="f-popis">Popis <span class="req">*</span></label><textarea id="f-popis" name="popis" placeholder="Krátce popište, co potřebujete…" required></textarea></div>
         <label class="gdpr"><input type="checkbox" required> Souhlasím se zpracováním osobních údajů pro účely odpovědi na poptávku.</label>
         <button type="submit" class="btn btn-primary">Odeslat poptávku</button>
       </form>
@@ -395,6 +397,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
