@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Autoservis Novák — Autoservis Tábor">
 <meta property="og:description" content="Spolehlivý autoservis — Tábor a okolí. Rychle, poctivě a s cenou předem.">
-<meta property="og:image" content="https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp">
-<link rel="preload" as="image" href="https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp" imagesrcset="https://danielnytra.github.io/autoservis-novak-demo/hero-sm.webp 640w, https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp 1280w" imagesizes="100vw" fetchpriority="high">
+<meta property="og:image" content="hero-lg.webp">
+<link rel="preload" as="image" href="hero-lg.webp" imagesrcset="hero-sm.webp 640w, hero-lg.webp 1280w" imagesizes="100vw" fetchpriority="high">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"AutoRepair","name":"Autoservis Novák","telephone":"+420602123456","email":"info@autoservis-novak.cz","address":{"@type":"PostalAddress","streetAddress":"Průmyslová 1234, 390 02 Tábor","addressLocality":"Tábor","addressCountry":"CZ"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"63"},"areaServed":"Tábor a okolí"}
@@ -66,7 +66,8 @@
   /* Hero */
   .hero{position:relative;overflow:hidden;color:#fff;background:#14161b}
   .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(150deg, rgba(20,22,27,.90) 0%, rgba(20,22,27,.66) 60%, rgba(20,22,27,.55) 100%);z-index:1}
+  /* overlay má garantované „dno" krytí za textem → čitelné nad JAKOUKOLI fotkou (i plně bílou) */
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(150deg, rgba(20,22,27,.90) 0%, rgba(20,22,27,.83) 55%, rgba(20,22,27,.86) 100%);z-index:1}
   .hero-glow{position:absolute;right:-120px;top:-80px;width:420px;height:420px;background:radial-gradient(circle,#c628284d,transparent 70%);z-index:1}
   .hero .wrap{padding:96px 24px 40px;position:relative;z-index:2}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#e2d3c8;margin-bottom:18px}
@@ -215,7 +216,7 @@
 
 <main>
 <header class="hero">
-  <img class="hero-bg" src="https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp" srcset="https://danielnytra.github.io/autoservis-novak-demo/hero-sm.webp 640w, https://danielnytra.github.io/autoservis-novak-demo/hero-lg.webp 1280w" sizes="100vw" alt="" width="1280" height="853" fetchpriority="high" decoding="async">
+  <img class="hero-bg" src="hero-lg.webp" srcset="hero-sm.webp 640w, hero-lg.webp 1280w" sizes="100vw" alt="" width="1280" height="853" fetchpriority="high" decoding="async">
   <div class="hero-overlay"></div><div class="hero-glow"></div>
   <div class="wrap">
     <span class="eyebrow">Autoservis · <span class="mesto">Tábor</span></span>

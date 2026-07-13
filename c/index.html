@@ -66,7 +66,8 @@
   /* Hero — dramatic, oversized, high-contrast */
   .hero{position:relative;overflow:hidden;color:#fff;background:var(--ink)}
   .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,11,13,.62) 0%, rgba(10,11,13,.55) 40%, rgba(10,11,13,.90) 100%);z-index:1}
+  /* overlay má garantované „dno" krytí za textem → čitelné nad JAKOUKOLI fotkou (i plně bílou) */
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,11,13,.82) 0%, rgba(10,11,13,.78) 44%, rgba(10,11,13,.92) 100%);z-index:1}
   .hero-glow{position:absolute;right:-8%;top:0;bottom:0;width:34%;background:linear-gradient(115deg,transparent,#c6282833);transform:skewX(-9deg);transform-origin:top;z-index:1}
   .hero .wrap{padding:118px 28px 52px;position:relative;z-index:2}
   .eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:26px}
