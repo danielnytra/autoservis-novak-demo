@@ -428,7 +428,9 @@
 </footer>
 
 <script>
-(function(){
+/* Init odložený za první paint (requestAnimationFrame) — carousel čte layout
+   (getBoundingClientRect), což by jinak blokovalo vykreslení a zhoršilo LCP. */
+requestAnimationFrame(function(){
   var NAV=82;
   function ease(t){ return t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2; }
   function smoothTo(top){ var s=window.pageYOffset,d=top-s,dur=Math.min(900,Math.max(350,Math.abs(d)*0.6)),t0=null;
@@ -459,7 +461,7 @@
   root.addEventListener('mouseenter',stop); root.addEventListener('mouseleave',start);
   var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ build(); go(idx); },150); });
   build(); go(0); start();
-})();
+});
 </script>
 </body>
 </html>
